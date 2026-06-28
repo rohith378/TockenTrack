@@ -11,8 +11,8 @@ const settingsRoutes = require('./routes/settings');
 const app = express();
 
 app.use(cors({
-  origin: (origin, cb) => cb(null, true), // allow all localhost origins
-  credentials: true
+  origin: process.env.FRONTEND_URL,
+  credentials: true,
 }));
 app.use(express.json());
 
